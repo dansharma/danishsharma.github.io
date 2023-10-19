@@ -4,17 +4,17 @@ html {
 div {
   margin: auto;
   text-align: center;
-  text-shadow: 1px 1px  black;
+  text-shadow: 1px 1px 1px black;
   
   width: 250px;
   height: 200px;
-  border: 2px solid rgb(163, 16, 16);
+  border: 1px solid rgb(163, 16, 16);
   border-radius: 10px;
-  box-shadow:2px 2px 5px  rgb(0, 0, 0),inset 1px 1px 4px rgb(255, 254, 254), inset -1px 1px 4px rgb(12, 12, 12) ;
+  box-shadow:2px 2px 5px  rgb(0, 0, 0),inset 2px 2px 4px rgb(255, 254, 254), inset -2px -2px 4px rgb(0, 0, 0) ;
  
   color: #ffffff;
-  background-color: #e61818;
-  font-size: 1.5rem;
+  background-color: rgba(249, 0, 0, 0.904);
+  font-size: 1.5rem;/* just started the value from 2 and kept changing it until it looked good*/
   line-height: 200px;
 
 }
