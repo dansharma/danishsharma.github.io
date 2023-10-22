@@ -1,5 +1,12 @@
 /* General setup */
 @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://github.com/JulietaUla/Montserrat/raw/master/fonts/webfonts/woff2/Montserrat-Regular.woff2')
+   format('woff2');
+}
+@font-face {
   font-family: 'open_sans';
   src: url('opensans-bold-webfont.woff2') format('woff2'),
        url('opensans-bold-webfont.woff') format('woff');
@@ -7,35 +14,22 @@
   font-style: normal;
 
 }
-
 @font-face {
-  font-family: 'open_sans';
-  src: url('opensans-bolditalic-webfont.woff2') format('woff2'),
-       url('opensans-bolditalic-webfont.woff') format('woff');
-  font-weight: 700;
-  font-style: italic;
-
-}
-
-
-@font-face {
-  font-family: 'open_sans';
-  src: url('opensans-extrabold-webfont.woff2') format('woff2'),
-       url('opensans-extrabold-webfont.woff') format('woff');
-  font-weight: 900;
+  font-family: 'Libre Baskerville';
   font-style: normal;
-
+  font-weight: 400;
+  src: url('https://github.com/impallari/Libre-Baskerville/raw/master/fonts/ttf/LibreBaskerville-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'open_sans';
-  src: url('opensans-italic-webfont.woff2') format('woff2'),
-       url('opensans-italic-webfont.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-
+  font-family: 'cursive_heading';
+  src: url('your-cursive-font.woff2') format('woff2'),
+       url('your-cursive-font.woff') format('woff');
+  font-weight: 700; /* Bold */
+  font-style: normal; /* Not italic */
 }
-html{font-size: 10px;}
+
+
 
 
 
@@ -57,6 +51,8 @@ a{
 a.visited{
   color: rgb(113, 113, 248);
 }
+
+
 
 /* Layout */
 
