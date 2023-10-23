@@ -25,8 +25,8 @@
   font-family: 'cursive_heading';
   src: url('your-cursive-font.woff2') format('woff2'),
        url('your-cursive-font.woff') format('woff');
-  font-weight: 700; /* Bold */
-  font-style: normal; /* Not italic */
+  font-weight: 700; 
+  font-style: normal; 
 }
 @font-face {
   font-family: 'Georgia';
@@ -41,7 +41,7 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 15px;
 }
 
 h1{
@@ -51,12 +51,18 @@ h1{
   font-style: normal;
   padding: auto;
   text-align: center;
+  letter-spacing: 3px;
 }
 h2 {
   font-family: 'Verdana', sans-serif; 
   font-size: 30px;
   font-weight: 700;
   font-style: normal;
+  letter-spacing: 3px;
+}
+p{
+  line-height: 25px;
+  font-size: 18px;
 }
 
 * {
@@ -69,14 +75,46 @@ body {
   max-width: 1400px;
   font-family: serif;
   line-height: 1.3;
+  letter-spacing: 1px;
+  word-spacing: 1px;
 }
 
-a{
-  color: rgb(5, 1, 247);
+  
+a[href^="http"] {
+  background: url("download_external_link.png") no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
 }
-a.visited{
-  color: rgb(113, 113, 248);
+
+a {
+  color: rgb(194, 108, 108); 
+  text-decoration: none; 
+text-decoration: underline;
+outline: none;}
+
+
+
+a:visited {
+    color: rgb(230, 97, 248); 
+    text-decoration: none}
+
+
+a:hover {
+  color: rgb(228, 77, 77); 
+  text-decoration: none;
 }
+
+
+a:focus {
+    outline: 2px solid #2715c4;
+    text-decoration: none; }
+
+  ul, ol,aside p{
+    margin-top: 1em; 
+    margin-bottom: 1em; 
+    }
+
+  
 
 
 
@@ -85,6 +123,11 @@ a.visited{
 section {
   float: left;
   width: 50%;
+}
+
+section h2 + p,
+section h2 + p::first-line {
+  text-indent: 20px;
 }
 
 aside {
@@ -100,6 +143,24 @@ nav {
 footer {
   clear: both;
 }
+.container {
+  
+  
+
+}
+.list-item{
+  display: inline-block;
+    font-family: 'open sans', sans-serif;
+    list-style-type: none;
+    line-height: 4em;
+    width:100%;
+    border: 3px solid #a66;
+    border-radius: 3px;
+    text-align: center;           
+    margin-top: 1em;
+    
+  }
+
 
 header, section, aside, nav, footer {
   padding: 20px;
