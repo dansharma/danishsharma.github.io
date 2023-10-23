@@ -39,11 +39,57 @@
   src: url('path-to-your-font/Times_New_Roman.woff2') format('woff2'),
        url('path-to-your-font/Times_New_Roman.woff') format('woff');
 }
-
+/* give page uniform text size */
 html {
   font-size: 15px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+section h2 + p,
+section h2 + p::first-line {
+  text-indent: 20px;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+
+/*  H1 HEADING STYLE CHANGED */
 h1{
   font: 'Georgia','Times New Roman',serif;
   font-size: 50px;
@@ -53,22 +99,23 @@ h1{
   text-align: center;
   letter-spacing: 3px;
 }
+
+/*  H2 HEADING CHANGED*/
 h2 {
-  font-family: 'Verdana', sans-serif; 
-  font-size: 30px;
-  font-weight: 700;
-  font-style: normal;
+  font-family: Courier, monospace,'Verdana', sans-serif; 
+  font-size: 25px;
+  font-weight: 800;
+  font-style: bold;
   letter-spacing: 3px;
+
 }
+
 p{
   line-height: 25px;
   font-size: 18px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
+/*  BODY STYLE CHANGED */
 body {
   margin: 0 auto;
   min-width: 1000px;
@@ -79,13 +126,13 @@ body {
   word-spacing: 1px;
 }
 
-  
+/*  EXTERNAL LINK ICONS ADDED */
 a[href^="http"] {
   background: url("download_external_link.png") no-repeat 100% 0;
   background-size: 16px 16px;
   padding-right: 19px;
 }
-
+/* LINKS STYLED  */
 a {
   color: rgb(194, 108, 108); 
   text-decoration: none; 
@@ -113,60 +160,21 @@ a:focus {
     margin-top: 1em; 
     margin-bottom: 1em; 
     }
-
-  /* Layout */
-
-section {
-  float: left;
-  width: 50%;
-}
-
-section h2 + p,
-section h2 + p::first-line {
-  text-indent: 20px;
-}
-
-aside {
-  float: left;
-  width: 30%;
-}
-
-nav {
-  float: left;
-  width: 20%;
-}
-
-footer {
-  clear: both;
-}
-.container {
-  
-  
-
-}
-.list-item{
-  display: inline-block;
-    font-family: 'open sans', sans-serif;
-    list-style-type: none;
-    line-height: 4em;
-    width:100%;
-    border: 3px solid #a66;
-    border-radius: 3px;
-    text-align: center;           
-    margin-top: 1em;
-
-  }
-
-
-header, section, aside, nav, footer {
-  padding: 20px;
-}
-
-/* header and footer */
-
-header, footer {
-  border-top: 5px solid #a66;
-  border-bottom: 5px solid #a66;
-}
-
-/* WRITE YOUR CODE BELOW HERE */
+/*  NAVIGATION BAR STYLED */
+  .list-item{
+      display: inline-block;
+        font-family: 'Georgia','Times New Roman',serif;
+        font-weight: 400;
+        font-style: italic;
+        text-decoration: none;
+        line-height: 4em;
+        width:100%;
+        border: 3px solid #a66;
+        border-radius: 3px;
+        text-align: center;           
+        margin-top: 1em;
+        background-color: rgb(255, 243, 243);
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    
+      }
+    
