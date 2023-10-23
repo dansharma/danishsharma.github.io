@@ -114,11 +114,7 @@ a:focus {
     margin-bottom: 1em; 
     }
 
-  
-
-
-
-/* Layout */
+  /* Layout */
 
 section {
   float: left;
@@ -158,7 +154,7 @@ footer {
     border-radius: 3px;
     text-align: center;           
     margin-top: 1em;
-    
+
   }
 
 
