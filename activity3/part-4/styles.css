@@ -1,4 +1,4 @@
-body {
+ body {
     background-color: #fff;
     color: #333;
     margin: 0;
@@ -10,6 +10,10 @@ div.logo{
   font-style: italic;
   font-size: 60px;
 }
+p{
+  font-size: 20px;
+}
+
 
   img {
       max-width: 100%;
@@ -27,6 +31,8 @@ div.logo{
     margin: 0 auto;
     padding: 0 20px;
     max-width: 980px;
+    display: grid;
+    grid-gap: 20px;
   }
   
   nav {
@@ -44,19 +50,53 @@ div.logo{
     justify-content: space-around;
     
   }
-  
+
+  article{
+    grid-column: 1 / 5;
+    grid-row: 1;
+    width: 100%;
+  }
+
+  article img{
+    float: left;
+    padding: 20px;
+    
+  }
+  .photos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1px;
+  }
+
+  aside {
+    grid-column: 5;
+    grid-row: 1;
+    width: 100%;}
+.text{
+  flex: 1;
+}
+
+
   nav a {
     color: #fff;
     text-decoration: none;
     padding: .5em 1em;
   }
   
-  .photos {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
+  
   .feature {
       width: 200px;
+  }
+
+  .special{
+         border: 3px solid rgb(255, 254, 254);
+        border-radius: 3px;
+        text-align: center;           
+        
+        background-color: rgb(0, 0, 0);
+        
   }

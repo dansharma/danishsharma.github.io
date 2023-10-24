@@ -131,7 +131,7 @@ a[href^="http"] {
   background: url("download_external_link.png") no-repeat 100% 0;
   background-size: 16px 16px;
   padding-right: 19px;
-}
+}  
 /* LINKS STYLED  */
 a {
   color: rgb(194, 108, 108); 
