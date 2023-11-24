@@ -18,6 +18,16 @@ const text = {
   }
 
 /* Looping through images */
+for (const i of images) {
+    const newImage = document.createElement('img'); 
+    newImage.setAttribute('src', `photo/${i}`);
+    newImage.setAttribute('alt', text[i]);
+    thumbBar.appendChild(newImage);
+    newImage.addEventListener('click', e => {
+        displayedImage.src = e.target.src;
+        displayedImage.alt = e.target.alt;
+    });
+}
 
 
 const newImage = document.createElement('img');
