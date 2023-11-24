@@ -4,11 +4,9 @@ const thumbBar = document.querySelector('.thumb-bar');
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
-/* Declaring the array of image filenames */
-
-/* Declaring the alternative text for each image file */
 
 /* Looping through images */
+
 
 const newImage = document.createElement('img');
 newImage.setAttribute('src', xxx);
