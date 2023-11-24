@@ -11,7 +11,7 @@ function randomValueFromArray(array){
 
 
 
-const storyString =["It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:",
+const storyText =["It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:",
    "they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."]
 
 const insertx =["Willy the Goblin",
@@ -26,14 +26,22 @@ const insertz =["spontaneously combusted",
 "melted into a puddle on the sidewalk",
 "turned into a slug and crawled away"]
 
-3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
+
 
 randomize.addEventListener('click', result);
 
 function result() {
 
+
+  var finalstory = storyText;
+
+finalstory = finalstory.replace(":insertx:",randomValueFromArray(insertx));
+finalstory = finalstory.replace(":inserty:",randomValueFromArray(inserty));
+finalstory = finalstory.replace(":insertz:",randomValueFromArray(insertz));
+
   if(customName.value !== '') {
-    const name = customName.value;
+    var newname = customName.value;
+    finalstory = finalstory.replace('Bob', newname);
 
   }
 
