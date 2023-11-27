@@ -55,6 +55,19 @@ class Ball {
     this.x += this.velocityX;
     this.y += this.velocityY;
   }
+  collision() {
+    for (const ball of balls) {
+      if (this !== ball) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+  
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
 }
 const balls = [];
 
@@ -63,8 +76,8 @@ const balls = [];
     const ball = new Ball(
       random(0 + size, width - size),
       random(0 + size, height - size),
-      random(-10, 7),
-      random(-10, 7),
+      random(-5, 5),
+      random(-5, 5),
       randomRGB(),
       size,
     );
@@ -72,15 +85,17 @@ const balls = [];
     balls.push(ball);
   }
   function loop() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
     ctx.fillRect(0, 0, width, height);
   
     for (const ball of balls) {
       ball.drawball();
       ball.update();
+      ball.collision();
     }
   
     requestAnimationFrame(loop);
   }
   loop();
+  
 
