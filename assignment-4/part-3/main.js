@@ -31,11 +31,56 @@ class Ball {
   drawball() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
-    ctx.arc(this.x, this.y, this.size, 0, 2 * 3.14,true);
+    ctx.arc(this.x, this.y, this.size, 0, 2 * 3.14);
     ctx.fill();
   }
-
-
-
+// creatinga upadte methid which will returun the ball if the touch the screen width edge.
+  update() {
+    if ((this.x + this.size) >= width) {
+      this.velocityX = -(this.velocityX);
+    }
+  
+    if ((this.x - this.size) <= 0) {
+      this.velocityX = -(this.velocityX);
+    }
+  
+    if ((this.y + this.size) >= height) {
+      this.velocityY = -(this.velocityY);
+    }
+  
+    if ((this.y - this.size) <= 0) {
+      this.velocityY = -(this.velocityY);
+    }
+  
+    this.x += this.velocityX;
+    this.y += this.velocityY;
+  }
 }
+const balls = [];
+
+  while (balls.length < 300) {
+    const size = random(5, 10);
+    const ball = new Ball(
+      random(0 + size, width - size),
+      random(0 + size, height - size),
+      random(-10, 7),
+      random(-10, 7),
+      randomRGB(),
+      size,
+    );
+  
+    balls.push(ball);
+  }
+  function loop() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    ctx.fillRect(0, 0, width, height);
+  
+    for (const ball of balls) {
+      ball.drawball();
+      ball.update();
+    }
+  
+    requestAnimationFrame(loop);
+  }
+  loop();
 
