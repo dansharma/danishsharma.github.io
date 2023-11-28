@@ -27,11 +27,61 @@ class shape {
    }
  }
 
+ class EvilCircle extends shape {
+   constructor(x, y) {
+     super(x, y, 20, 20);
+     this.color = 'white';
+     this.size = 10;
+     this.exists = true;
+   }
+
+   draw() {
+      ctx.beginPath();
+      ctx.strokeStyle = this.color; // Use strokeStyle instead of fillStyle
+      ctx.lineWidth = 3; // Set the line width to 3
+      ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+      ctx.stroke(); // Use stroke() instead of fill()
+    }
+  
+    checkBounds() {
+      if ((this.x + this.size) >= width) {
+        this.x = width - this.size;
+      }
+  
+      if ((this.x - this.size) <= 0) {
+        this.x = this.size;
+      }
+  
+      if ((this.y + this.size) >= height) {
+        this.y = height - this.size;
+      }
+  
+      if ((this.y - this.size) <= 0) {
+        this.y = this.size;
+      }
+    }
+  
+    collisionDetect() {
+      for (const ball of balls) {
+        if (ball.exists) { // Check if the ball exists
+          const dx = this.x - ball.x;
+          const dy = this.y - ball.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+  
+          if (distance < this.size + ball.size) {
+            ball.exists = false; // Set the ball to not exist
+          }
+        }
+      }
+    }
+  }
+ 
+
 class Ball extends shape {
 
-   constructor(x, y, velX, velY, color, size)
+   constructor(x, y, velocityX, velocityY, color, size)
    {
-      super(x, y, velX, velY);
+      super(x, y, velocityX, velocityY);
       this.color = color;
       this.size = size;
       this.exists=true;
@@ -46,23 +96,23 @@ class Ball extends shape {
 
    update() {
       if ((this.x + this.size) >= width) {
-         this.velX = -(Math.abs(this.velX));
+         this.velocityX = -(Math.abs(this.velocityX));
       }
 
       if ((this.x - this.size) <= 0) {
-         this.velX = Math.abs(this.velX);
+         this.velocityX = Math.abs(this.velocityX);
       }
 
       if ((this.y + this.size) >= height) {
-         this.velY = -(Math.abs(this.velY));
+         this.velocityY = -(Math.abs(this.velocityY));
       }
 
       if ((this.y - this.size) <= 0) {
-         this.velY = Math.abs(this.velY);
+         this.velocityY = Math.abs(this.velocityY);
       }
 
-      this.x += this.velX;
-      this.y += this.velY;
+      this.x += this.velocityX;
+      this.y += this.velocityY;
    }
 
    collisionDetect() {
@@ -80,7 +130,6 @@ class Ball extends shape {
    }
 
 }
-
 const balls = [];
 
 while (balls.length < 25) {
@@ -113,3 +162,20 @@ function loop() {
 }
 
 loop();
+window.addEventListener("keydown", (e) => {
+   switch (e.key) {
+     case "a":
+       this.x -= this.velocityX;
+       break;
+     case "d":
+       this.x += this.velocityX;
+       break;
+     case "w":
+       this.y -= this.velocityY;
+       break;
+     case "s":
+       this.y += this.velocityY;
+       break;
+   }
+ });   
+ 
