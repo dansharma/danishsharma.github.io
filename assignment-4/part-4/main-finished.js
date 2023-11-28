@@ -148,20 +148,7 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
-function loop() {
-   ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
-   ctx.fillRect(0, 0,  width, height);
 
-   for (const ball of balls) {
-     ball.draw();
-     ball.update();
-     ball.collisionDetect();
-   }
-
-   requestAnimationFrame(loop);
-}
-
-loop();
 window.addEventListener("keydown", (e) => {
    switch (e.key) {
      case "a":
@@ -178,4 +165,28 @@ window.addEventListener("keydown", (e) => {
        break;
    }
  });   
+
+const evilCircle = new EvilCircle(width / 2, height / 2); // Create a new EvilCircle instance
+
+function loop() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+  ctx.fillRect(0, 0, width, height);
+
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
+
+  for (const ball of balls) {
+    if (ball.exists) {
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
+  }
+
+  requestAnimationFrame(loop);
+}
+
+loop();
+
  
