@@ -16,7 +16,14 @@ showHideBtn.onclick = function() {
   }
 };
 
-// functionality for adding a new comment via the comments form
+
+showHideBtn.onkeydown = (e) => {
+  if (e.key === "Enter") {
+    showHideBtn.click();
+  }
+}
+
+
 
 const form = document.querySelector('.comment-form');
 const nameField = document.querySelector('#name');
@@ -44,4 +51,35 @@ function submitComment() {
 
   nameField.value = '';
   commentField.value = '';
+}
+
+
+const transcript = document.querySelector('.transcript');
+const transcriptBtn = document.querySelector('.transcript-button');
+const transcriptCon = document.querySelector('.transcript-container')
+
+transcriptBtn.onclick = () => {
+  if(transcriptBtn.textContent === 'Show transcript') {
+    transcript.style.display = "block";
+    transcriptBtn.textContent = 'Hide transcript';
+  } else {
+    transcript.style.display = "none";
+    transcriptBtn.textContent = 'Show transcript'
+  }
+}
+
+
+const nav = document.querySelector("nav")
+const hamIcon = document.querySelector(".hamIcon")
+const navMenu = document.querySelector("nav ul")
+navMenu.className = "hidden";
+
+hamIcon.onclick = () => {
+  if(navMenu.className === "hidden") {
+    navMenu.style.visibility = "visible";
+    navMenu.className = "visible";
+  } else if (navMenu.className === "visible") {
+    navMenu.style.visibility = "hidden";
+    navMenu.className = "hidden";
+  }
 }
